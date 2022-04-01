@@ -61,3 +61,7 @@
 .nav-item{
   padding-right: 36px;
 }
+.imageWidth{
+  height: 300px;
+  object-fit: contain;
+}

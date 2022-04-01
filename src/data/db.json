@@ -1,0 +1,112 @@
+
+  [
+    {
+      "id": 1,
+      "name": "Paneer pakoda",
+      "description": "Paneer pakoda is made by batter frying Indian cottage cheese aka paneer. ",
+      "icon":"images/logo-1.png",
+      "category": "snacks",
+      "price": 200,
+      "stock":12
+    },
+    {
+      "id": 2,
+      "name": "Plain dosa",
+      "description": " Plain Dosa is a quick meal recipe made with a fermented batter of rice..... ",
+      "icon":"images/logo-2.png",
+      "category": "breakfast",
+      "price": 100,
+      "stock":20
+    },
+    {
+      "id": 3,
+      "name": "Gwaramari",
+      "description": " Gwaramari is a Newa cuisine which literally means round bread- “Gwara” meaning round and “mari” meaning traditional bread.[1] The food is popular in Kathmandu area. It is eaten in breakfast usually served with a milk tea.",
+      "icon":"images/logo-3.jpg",
+      "category": "breakfast",
+      "price": 30,
+      "stock":200
+    },
+    {
+      "id": 4,
+      "name": "Egg Roll",
+      "description": " An egg roll is a cylindrical, savory roll with shredded cabbage, chopped pork, and other fillings inside a thickly-wrapped wheat flour skin, which is fried in hot oil..",
+      "icon":"images/logo-4.png",
+      "category": "breakfast",
+      "price": 60,
+      "stock":100
+    },
+    {
+      "id": 5,
+      "name": "Aloo paratha",
+      "description": "Aloo parathas consist of unleavened dough rolled with a mixture of mashed potato and spices, which is cooked on a hot tawa with butter or ghee",
+      "icon":"images/logo-5.jpg",
+      "category": "breakfast",
+      "price": 50,
+      "stock":60
+    },
+    {
+      "id": 6,
+      "name": "Chicken friedrice",
+      "description": "Fried rice is a dish of cooked rice that has been stir-fried in a wok or a frying pan and is usually mixed with other ingredients such as eggs, vegetables, seafood, or meat.",
+      "icon":"images/logo-6.png",
+      "category": "lunch",
+      "price": 150,
+      "stock":40
+    },
+    {
+      "id": 7,
+      "name": "Dhido",
+      "description": "Dhindo (Nepali: ढिँडो [ɖʱĩɽo] ( listen)) is a meal prepared in Nepal. It is prepared by gradually adding flour to boiling water while stirring.",
+      "icon":"images/logo-7.jpg",
+      "category": "lunch",
+      "price": 250,
+      "stock":30
+    },
+    {
+      "id": 8,
+      "name": "Dhaal bhat",
+      "description": "Dal bhat is a traditional meal of Nepal. It consists of steamed rice and a cooked lentil or other pulses stew called dal. It is a staple food in these countries",
+      "icon":"images/logo-8.jpg",
+      "category": "lunch",
+      "price": 350,
+      "stock":150
+    },
+    {
+      "id": 9,
+      "name": "Thakali Khana",
+      "description": "Thakali cuisine uses locally grown buckwheat, barley, millet and dal, as well as rice, maize and dal imported from lower regions to the south.",
+      "icon":"images/logo-9.png",
+      "category": "lunch",
+      "price": 450,
+      "stock":90
+    },
+    {
+      "id": 10,
+      "name": "Chicken Momo",
+      "description": "hicken Momo is a dumpling made of all-purpose flour and filled with  meat. Inspired by Tibetan dumplings, the dish is a very popular Nepali street food.",
+      "icon":"images/logo-10.png",
+      "category": "snacks",
+      "price": 200,
+      "stock":200
+    },
+    {
+      "id": 11,
+      "name": "Khashi ko Sekuwa",
+      "description": "Sekuwa is a Nepalese specialty dish consisting of grilled and skewered  he-goat meat. Before grilling, the meat is combined with fresh herbs and spices. It is one of the most popular street food items in the country. ",
+      "icon":"images/logo-11.jpg",
+      "category": "snacks",
+      "price": 1150,
+      "stock":40
+    },
+    {
+      "id": 12,
+      "name": "Sel Roti",
+      "description": "A fusion of doughnut and bagel, Sel Roti is one of the most sought after snack in Nepal during festivals like Tihar and Dashain. It is a circular rice flour bread which is deeply fried to make it crunchy on the outside and soft on the inside.  ",
+      "icon":"images/logo-12.jpg",
+      "category": "snacks",
+      "price": 50,
+      "stock":400
+    }
+  ]
+

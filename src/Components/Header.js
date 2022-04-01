@@ -1,11 +1,12 @@
 import React from "react";
+import Logo from  '../assets/logo.png'
 
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Navbar
+         <img src={Logo} alt='Image brand' className="img-fluid" style={{height:'50px'}}/>
         </a>
         <button
           className="navbar-toggler"
