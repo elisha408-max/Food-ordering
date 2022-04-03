@@ -89,3 +89,6 @@
 .navItems{
   display:inline-block!important;
 }
+.favoriteIcons{
+  font-size: 24px;
+}

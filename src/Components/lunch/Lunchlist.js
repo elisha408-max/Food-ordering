@@ -7,11 +7,11 @@ import { fetchProduct } from "../../redux/actions/products";
 
 import { decrement } from "../../redux/actions/counter";
 import { increment } from "../../redux/actions/counter";
-import LunchItem from './LunchItem'
+import LunchItem from "./LunchItem";
 
 const Lunchlist = () => {
   const dispatch = useDispatch();
-  
+
   // const [data, setData] = useState([]);
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -34,9 +34,7 @@ const Lunchlist = () => {
     <div className="m-5">
       <div className="row">
         {lunchs.map((item, index) => {
-          return (
-            <LunchItem key={index} item={item} />
-          );
+          return <LunchItem key={index} item={item} />;
         })}
       </div>
     </div>

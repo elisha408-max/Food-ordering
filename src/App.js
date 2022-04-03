@@ -12,6 +12,8 @@ import Dinner from "./Components/Dinner";
 import Burger from "./Components/Burger";
 import Login from "./Components/Login";
 import Cart from "./Components/Cart.js";
+import Fooddetail from "./Components/Fooddetail.js";
+
 function App() {
   return (
     <div className="App">
@@ -25,6 +27,7 @@ function App() {
         <Route path="dinner" element={<Dinner />} />
         <Route path="burger" element={<Burger />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="fooddetail" element={<Fooddetail />} />
       </Routes>
     </div>
   );

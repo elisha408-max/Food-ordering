@@ -4,11 +4,13 @@ import Logo2 from "../assets/logo-2.jpg";
 import { useSelector, useDispatch } from "react-redux";
 import { AiOutlineDelete } from "react-icons/ai";
 import { removeFromCart } from "../redux/actions/cart";
-import Totalamount from './Totalamount';
+import Totalamount from "./Totalamount";
+import Form from './Form.js'
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart: cartValue } = useSelector((state) => state.product);
   console.log(cartValue, "cartValue");
+  let Totalamount = 0;
   return (
     <>
       <div className="container">
@@ -53,10 +55,12 @@ const Cart = () => {
             </ul>
           </div>
           <div className="row mt-3">
-            <div className="col-7">
+            {/* <div className="col-5 ">dfjral</div> */}
+            <div className="col-6">
               <div className="card" style={{ padding: "20px" }}>
                 <h3 className="fw-bold ">My Shopping Cart</h3>
                 {cartValue.map((item, index) => {
+                  let subTotal = item.price * item.quantity;
                   return (
                     <div className="row mb-5 mt-3">
                       <div className="col-6">
@@ -66,11 +70,15 @@ const Cart = () => {
                           alt="food image"
                         />
                       </div>
+
                       <div className="col-6">
                         {" "}
-                        <div className='ms-3'>
+                        <div className="ms-3">
                           <h5>{item.name}</h5>
                           <p>NRs. {item.price}</p>
+                          <span className="d-none">
+                            {(Totalamount = Totalamount + subTotal)}
+                          </span>
                           <div
                             className="btn-group buttonStyling"
                             role="group"
@@ -109,6 +117,7 @@ const Cart = () => {
                               style={{ fontSize: "24px" }}
                             />
                           </div>
+
                           <div className="text-success mt-3">
                             Quantity:{item.quantity}
                           </div>
@@ -118,10 +127,30 @@ const Cart = () => {
                   );
                 })}
               </div>
+
+              <div className="row mt-3">
+                <div className="card">
+                  <h3 className="fw-bold ">Order Summary</h3>
+                  <p className="mt-2 text-success">
+                    {" "}
+                    <span className="me-3">Subtotal:</span>{" "}
+                    {` Rs. ${Totalamount}`}{" "}
+                  </p>
+                  <h5>
+                    {" "}
+                    <span className="me-3">Total Amount:</span>
+                    {`Rs.  ${Totalamount}`}{" "}
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div className="col-6 ">
+              <div className='card'>
+                <Form />
+              </div>
             </div>
           </div>
         </div>
-        <Totalamount />
       </div>
     </>
   );
