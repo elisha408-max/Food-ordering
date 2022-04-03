@@ -1,12 +1,16 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/actions/cart";
-import { AiOutlineStar } from "react-icons/ai";
+
 import { useNavigate } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 const BreakfastItem = ({ item }) => {
   const [quantity, setQuantity] = React.useState(0);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const ratingChanged = (rating) => {
+    alert(`You have given ${rating} star for us.`);
+  };
   // const params = useParams();
   return (
     <>
@@ -23,13 +27,15 @@ const BreakfastItem = ({ item }) => {
               >
                 {item.name}
               </h5>
-              <div className="my-2 favoriteIcons">
+              <ReactStars size={30} isHalf={true} onChange={ratingChanged} />
+
+              {/* <div className="my-2 favoriteIcons">
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
-              </div>
+              </div> */}
               <span>Rs.{item.price}</span>
 
               <br />

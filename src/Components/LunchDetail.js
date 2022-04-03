@@ -6,7 +6,7 @@ const LunchDetail = () => {
   const {  lunchdetailId} = useParams();
   const [quantity, setQuantity] = React.useState(0);
   const dispatch = useDispatch();
-  const todo = useSelector((state) => state.product.lunchs);
+  const todo = useSelector((state) => state.product.lunchs[lunchdetailId-6]);
   console.log(todo,'todo')
   return (
     <>

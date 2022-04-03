@@ -14,6 +14,7 @@ import Login from "./Components/Login";
 import Cart from "./Components/Cart.js";
 import Fooddetail from "./Components/Fooddetail.js";
 import LunchDetail from "./Components/LunchDetail.js";
+import LunchItem from "./Components/lunch/LunchItem.js";
 
 function App() {
   return (
@@ -24,16 +25,20 @@ function App() {
         <Route path="/" element={<BreakfastList />} />
         <Route path="login" element={<Login />} />
         <Route path="lunch" element={<Lunchlist />}>
-          <Route
-            path={`lunchdetail/:lunchdetailId`}
+          {/* <Route
+            path={`:lunchdetailId`}
             element={<LunchDetail />}
-          />
+          /> */}
         </Route>
         <Route path="snack" element={<Snackslist />} />
         <Route path="dinner" element={<Dinner />} />
         <Route path="burger" element={<Burger />} />
         <Route path="cart" element={<Cart />} />
         <Route path={`fooddetail/:fooddetailId`} element={<Fooddetail />} />
+        <Route
+            path={`:lunchdetailId`}
+            element={<LunchDetail />}
+          />
       </Routes>
     </div>
   );
