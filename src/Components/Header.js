@@ -4,21 +4,23 @@ import { BsCartPlus } from "react-icons/bs";
 import cart from "../assets/cart.png";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { cart: cartValue } = useSelector((state) => state.product);
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark header">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link to="/">
           <img
             src={Logo}
             alt="Image brand"
             className="img-fluid"
             style={{ height: "50px" }}
           />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -38,6 +40,9 @@ const Header = () => {
             <button
               type="button"
               className="btn btn-outline-light rounded-pill ms-3 logIn"
+              onClick={() => {
+                navigate("/login");
+              }}
             >
               Login
             </button>
@@ -64,7 +69,7 @@ const Header = () => {
                   className="cart-img ms-3"
                 />
                 <span data-v-02906ae3="" className="cartsize" img-fluid>
-                 {cartValue.length}
+                  {cartValue.length}
                 </span>
               </div>
             </Link>

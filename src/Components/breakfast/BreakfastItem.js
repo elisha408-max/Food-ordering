@@ -2,11 +2,12 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/actions/cart";
 import { AiOutlineStar } from "react-icons/ai";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 const BreakfastItem = ({ item }) => {
   const [quantity, setQuantity] = React.useState(0);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  // const params = useParams();
   return (
     <>
       {" "}
@@ -14,11 +15,15 @@ const BreakfastItem = ({ item }) => {
         <div className="card px-3 py-4">
           <div className="row">
             <div className="col-7">
-              <h5 className="text-danger"
-              onClick={()=>{
-                navigate('fooddetail')
-              }}>{item.name}</h5>
-              <div className='my-2 favoriteIcons'>
+              <h5
+                className="text-danger"
+                onClick={() => {
+                  navigate(`/fooddetail/${item.id}`);
+                }}
+              >
+                {item.name}
+              </h5>
+              <div className="my-2 favoriteIcons">
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />

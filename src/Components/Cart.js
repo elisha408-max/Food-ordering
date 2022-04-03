@@ -5,12 +5,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { AiOutlineDelete } from "react-icons/ai";
 import { removeFromCart } from "../redux/actions/cart";
 import Totalamount from "./Totalamount";
-import Form from './Form.js'
+import Form from "./Form.js";
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart: cartValue } = useSelector((state) => state.product);
   console.log(cartValue, "cartValue");
   let Totalamount = 0;
+
+  const [quantity, setQuantity] = React.useState(0);
   return (
     <>
       <div className="container">
@@ -87,11 +89,11 @@ const Cart = () => {
                             <button
                               type="button"
                               className="btn btn-outline-dark"
-                              // onClick={() => {
-                              //   if (quantity > 0) {
-                              //     setQuantity(quantity - 1);
-                              //   }
-                              // }}
+                              onClick={() => {
+                                if (quantity > 0) {
+                                  setQuantity(quantity - 1);
+                                }
+                              }}
                             >
                               -
                             </button>
@@ -99,15 +101,14 @@ const Cart = () => {
                               type="button"
                               className="btn btn-outline-dark"
                             >
-                              {3}
+                              {quantity}
                             </button>
                             <button
                               type="button"
                               className="btn btn-outline-dark"
-
-                              // onClick={() => {
-                              //   setQuantity(quantity + 1);
-                              // }}
+                              onClick={() => {
+                                setQuantity(quantity + 1);
+                              }}
                             >
                               +
                             </button>
@@ -145,7 +146,7 @@ const Cart = () => {
               </div>
             </div>
             <div className="col-6 ">
-              <div className='card'>
+              <div className="card">
                 <Form />
               </div>
             </div>

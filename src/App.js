@@ -13,6 +13,7 @@ import Burger from "./Components/Burger";
 import Login from "./Components/Login";
 import Cart from "./Components/Cart.js";
 import Fooddetail from "./Components/Fooddetail.js";
+import LunchDetail from "./Components/LunchDetail.js";
 
 function App() {
   return (
@@ -22,12 +23,17 @@ function App() {
       <Routes>
         <Route path="/" element={<BreakfastList />} />
         <Route path="login" element={<Login />} />
-        <Route path="lunch" element={<Lunchlist />} />
+        <Route path="lunch" element={<Lunchlist />}>
+          <Route
+            path={`lunchdetail/:lunchdetailId`}
+            element={<LunchDetail />}
+          />
+        </Route>
         <Route path="snack" element={<Snackslist />} />
         <Route path="dinner" element={<Dinner />} />
         <Route path="burger" element={<Burger />} />
         <Route path="cart" element={<Cart />} />
-        <Route path="fooddetail" element={<Fooddetail />} />
+        <Route path={`fooddetail/:fooddetailId`} element={<Fooddetail />} />
       </Routes>
     </div>
   );
