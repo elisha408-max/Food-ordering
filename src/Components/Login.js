@@ -9,17 +9,30 @@ const Login = () => {
     Email: Yup.string().required(),
     Password: Yup.string().required(),
   });
+  // const formik = useFormik({
+  //   initialValues: {
+  //     Email: "",
+  //     Password: "",
+  //   },
+
+  //   onSubmit: (values, resetForm) => {
+  //     formik.resetForm();
+  //     console.log(values, "values");
+  //     alert(JSON.stringify(values, null, 2));
+  //     // navigate("/");
+  //   },
+  //   validationSchema,
+  // });
   const formik = useFormik({
     initialValues: {
       Email: "",
       Password: "",
     },
-
     onSubmit: (values, resetForm) => {
-      formik.resetForm();
       console.log(values, "values");
       alert(JSON.stringify(values, null, 2));
-      // navigate("/");
+      formik.resetForm();
+      navigate('/')
     },
     validationSchema,
   });
@@ -46,12 +59,15 @@ const Login = () => {
                     <div className="form-group">
                       {" "}
                       <input
-                        type="email number"
-                        name="email number"
+                        type="email"
+                        name="Email"
                         placeholder="Email or Phone"
                         className="form-control"
-                        id='Email'
-                        name='Email'
+                        id="Email"
+                        name="Email"
+                        onChange={formik.handleChange}
+                        value={formik.values.Email}
+                        onBlur={formik.handleBlur}
                       />{" "}
                       {formik.errors.Email && formik.touched.Email ? (
                         <span className="text-danger">
@@ -63,8 +79,11 @@ const Login = () => {
                         name="Password"
                         placeholder="Password"
                         className="form-control"
-                        id='Password'
-                        name='Password'
+                        id="Password"
+                        name="Password"
+                        onChange={formik.handleChange}
+                        value={formik.values.Password}
+                        onBlur={formik.handleBlur}
                       />
                       {formik.errors.Password && formik.touched.Password ? (
                         <span className="text-danger">
@@ -81,7 +100,7 @@ const Login = () => {
                         type="submit"
                         className="btn btn-primary btn1"
                         onClick={() => {
-                          navigate("/");
+                          // navigate("/");
                         }}
                       >
                         Login

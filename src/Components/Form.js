@@ -15,34 +15,10 @@ const Form = () => {
       )
       .min(10)
       .max(10),
-      note: Yup.string().required("This is required"),
-      details: Yup.string().required("This is required"),
+    note: Yup.string().required("This is required"),
+    details: Yup.string().required("This is required"),
   });
 
-  // const navigate = useNavigate();
-
-  // const formik = useFormik({
-  //   initialValues: {
-  //   x  name: "",
-  //     phone: "",
-  //     note: "",
-  //     details: "",
-  //   },
-
-  //   onSubmit: (values, resetForm) => {
-  //     // formik.resetForm();
-  //     console.log(values, "values");
-  //     navigate("/");
-  //     console.log(formik.errors);
-  //   },
-  //   validationSchema,
-  // });
-  // const validationSchema = Yup.object({
-  //   name: Yup.string().required(),
-  //   phone: Yup.number().required(),
-  //   note: Yup.string().required(),
-  //   details: Yup.number().required(),
-  // });
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -50,9 +26,9 @@ const Form = () => {
       note: "",
       details: "",
     },
-    onSubmit: (values,resetForm) => {
+    onSubmit: (values, resetForm) => {
       console.log(values, "values");
-      formik.resetForm()
+      formik.resetForm();
     },
     validationSchema,
   });
@@ -134,11 +110,11 @@ const Form = () => {
             value={formik.values.details}
             onBlur={formik.handleBlur}
           />
-           {formik.errors.details && formik.touched.details ? (
-          <span className="text-danger">{formik.errors.details}</span>
-        ) : null}
+          {formik.errors.details && formik.touched.details ? (
+            <span className="text-danger">{formik.errors.details}</span>
+          ) : null}
         </div>
-       
+
         <Button type="submit" variant="success" className="mt-2">
           CONFIRM DETAILS
         </Button>
