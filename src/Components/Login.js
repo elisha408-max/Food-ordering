@@ -37,7 +37,8 @@ const Login = () => {
     validationSchema,
   });
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <div className='wrapper'>
+       <form onSubmit={formik.handleSubmit}>
       <div className="login">
         <div className=" p-5  container ">
           <div className="row d-flex justify-content-center">
@@ -140,6 +141,8 @@ const Login = () => {
         </div>
       </div>
     </form>
+    </div>
+   
   );
 };
 

@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import BreakfastList from "./Components/breakfast/BreakfastList";
 import Snackslist from "./Components/snacks/Snackslist";
 import Lunchlist from "./Components/lunch/Lunchlist";
-
+import Beveragelist from "./Components/Beverages/Beveragelist";
 import Snack from "./Components/Snack";
 import Dinner from "./Components/Dinner";
 import Burger from "./Components/Burger";
@@ -26,36 +26,36 @@ function App() {
     setSearchTerm(searchTerm);
     if (searchTerm !== "") {
       const newBreakfastList = breakfasts.filter((item) => {
-       return  Object.values(breakfasts)
+        return Object.values(breakfasts)
           .join("")
           .toLowerCase()
           .includes(searchTerm.toLowerCase());
       });
-      setSearchResults(newBreakfastList)
-    }
-    else{
-      setSearchResults(breakfasts)
+      setSearchResults(newBreakfastList);
+    } else {
+      setSearchResults(breakfasts);
     }
   };
   return (
     <div className="App">
-      <Header />
-      <Navbar term={searchTerm} searchKeyword={searchHandler} />
+      {/* <Header />
+      <Navbar term={searchTerm} searchKeyword={searchHandler} /> */}
       <Routes>
-        <Route path="/" element={<BreakfastList />} searchResults={searchResults}/>
-        <Route path="login" element={<Login />} />
-        <Route path="lunch" element={<Lunchlist />}>
-          {/* <Route
-            path={`:lunchdetailId`}
-            element={<LunchDetail />}
-          /> */}
+        <Route
+          path="/"
+          element={<BreakfastList />}
+          searchResults={searchResults}
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/lunch" element={<Lunchlist />}>
+          <Route path={`:lunchdetailId`} element={<LunchDetail />} />
         </Route>
-        <Route path="snack" element={<Snackslist />} />
-        <Route path="dinner" element={<Dinner />} />
-        <Route path="burger" element={<Burger />} />
-        <Route path="cart" element={<Cart />} />
-        <Route path={`fooddetail/:fooddetailId`} element={<Fooddetail />} />
-        <Route path={`:lunchdetailId`} element={<LunchDetail />} />
+        <Route path="/snack" element={<Snackslist />} />
+        <Route path="/dinner" element={<Dinner />} />
+        <Route path="/burger" element={<Beveragelist />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path={`/fooddetail/:fooddetailId`} element={<Fooddetail />} />
+        {/* <Route path={`/lunch/:lunchdetailId`} element={<LunchDetail />} /> */}
       </Routes>
     </div>
   );

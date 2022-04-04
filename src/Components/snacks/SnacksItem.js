@@ -2,9 +2,13 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/actions/cart";
 import { AiOutlineStar } from "react-icons/ai";
+import ReactStars from "react-rating-stars-component";
 const BreakfastItem = ({ item }) => {
   const [quantity, setQuantity] = React.useState(0);
   const dispatch = useDispatch();
+  const ratingChanged = (rating) => {
+    alert(`You have given ${rating} star for us.`);
+  };
   return (
     <>
       {" "}
@@ -13,13 +17,14 @@ const BreakfastItem = ({ item }) => {
           <div className="row">
             <div className="col-7">
               <h5 className="text-danger">{item.name}</h5>
-              <div className="my-2 favoriteIcons">
+              <ReactStars size={30} isHalf={true} onChange={ratingChanged} />
+              {/* <div className="my-2 favoriteIcons">
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
                 <AiOutlineStar />
-              </div>
+              </div> */}
               <span>Rs.{item.price}</span>
 
               <br />

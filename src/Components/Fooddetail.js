@@ -2,7 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../redux/actions/cart";
-const Fooddetail = () => {
+import Header from './Header';
+import Navbar from './Navbar';
+const Fooddetail = () => {;
   const { fooddetailId } = useParams();
   const todo = useSelector(
     (state) => state.product.breakfasts[fooddetailId - 2]
@@ -13,6 +15,8 @@ const Fooddetail = () => {
   return (
     <>
       <>
+      <Header />
+      <Navbar />
         <div className="container">
           <div className="row " style={{ marginTop: "100px" }}>
             <div className="col-md-5 col-12">

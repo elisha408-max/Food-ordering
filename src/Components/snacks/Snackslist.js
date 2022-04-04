@@ -8,7 +8,8 @@ import { fetchProduct } from "../../redux/actions/products";
 import { decrement } from "../../redux/actions/counter";
 import { increment } from "../../redux/actions/counter";
 import SnacksItem from "./SnacksItem";
-
+import Header from '../Header';
+import Navbar from '../Navbar';
 const Snackslist = () => {
   const dispatch = useDispatch();
   const snacks = useSelector((state) => state.product.snacks);
@@ -18,13 +19,17 @@ const Snackslist = () => {
     dispatch(fetchProduct());
   }, []);
   return (
-    <div className="m-5">
-      <div className="row">
-        {snacks.map((item, index) => {
-          return <SnacksItem key={index} item={item} />;
-        })}
+    <>
+      <Header />
+      <Navbar />
+      <div className="m-5">
+        <div className="row">
+          {snacks.map((item, index) => {
+            return <SnacksItem key={index} item={item} />;
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -6,6 +6,8 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { removeFromCart } from "../redux/actions/cart";
 import Totalamount from "./Totalamount";
 import Form from "./Form.js";
+import Header from "./Header";
+import Navbar from "./Navbar";
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart: cartValue } = useSelector((state) => state.product);
@@ -13,9 +15,11 @@ const Cart = () => {
   let Totalamount = 0;
 
   const [quantity, setQuantity] = React.useState(0);
-  
+
   return (
     <>
+      <Header />
+      <Navbar />
       <div className="container">
         <div className="m-3">
           <div className="row">

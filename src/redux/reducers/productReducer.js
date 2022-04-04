@@ -5,6 +5,7 @@ import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
   FILTER_ITEMS,
+  SEARCH_ITEMS,
 } from "../constants";
 
 const initialState = {
@@ -96,7 +97,14 @@ const productReducer = (state = initialState, action) => {
         ...state,
         products: searchedItems,
       };
-
+    case SEARCH_ITEMS:
+      console.log(action.payload);
+      // const items = Object.values(action.payload.title);
+      // const searchValues = state.product.breakfasts.find((item) => {
+      //   console.log(item.name);
+      //   console.log(action.payload.values);
+      //   return item.name === items[0];
+      // });
     default:
       return state;
   }

@@ -8,10 +8,11 @@ import { fetchProduct } from "../../redux/actions/products";
 import { decrement } from "../../redux/actions/counter";
 import { increment } from "../../redux/actions/counter";
 import BreakfastItem from './BreakfastItem'
-
+import Header from '../Header';
+import Navbar from '../Navbar';
 const BreakfastList = (props) => {
   const dispatch = useDispatch();
-  console.log(props,'props')
+  // console.log(props,'props')
   // const [data, setData] = useState([]);
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -31,6 +32,9 @@ const BreakfastList = (props) => {
   }, []);
 
   return (
+    <>
+    <Header />
+    <Navbar />
     <div className="m-5">
       <div className="row">
         {breakfasts.map((item, index) => {
@@ -40,6 +44,7 @@ const BreakfastList = (props) => {
         })}
       </div>
     </div>
+    </>
   );
 };
 

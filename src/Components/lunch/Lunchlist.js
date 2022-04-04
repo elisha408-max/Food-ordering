@@ -8,8 +8,9 @@ import { fetchProduct } from "../../redux/actions/products";
 import { decrement } from "../../redux/actions/counter";
 import { increment } from "../../redux/actions/counter";
 import LunchItem from "./LunchItem";
-import {Outlet} from 'react-router-dom'
-
+import { Outlet } from "react-router-dom";
+import Header from '../Header';
+import Navbar from '../Navbar';
 const Lunchlist = () => {
   const dispatch = useDispatch();
 
@@ -32,19 +33,21 @@ const Lunchlist = () => {
   }, []);
 
   return (
-    <div className="m-5">
-      <div className="row">
-        {lunchs.map((item, index) => {
-          return (
-            <>
-              <LunchItem key={index} item={item} />
-              
-            </>
-          );
-        })}
-       
+    <>
+      <Header />
+      <Navbar />
+      <div className="m-5">
+        <div className="row">
+          {lunchs.map((item, index) => {
+            return (
+              <>
+                <LunchItem key={index} item={item} />
+              </>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

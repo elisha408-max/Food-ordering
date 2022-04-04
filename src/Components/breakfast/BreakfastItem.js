@@ -29,13 +29,6 @@ const BreakfastItem = ({ item }) => {
               </h5>
               <ReactStars size={30} isHalf={true} onChange={ratingChanged} />
 
-              {/* <div className="my-2 favoriteIcons">
-                <AiOutlineStar />
-                <AiOutlineStar />
-                <AiOutlineStar />
-                <AiOutlineStar />
-                <AiOutlineStar />
-              </div> */}
               <span>Rs.{item.price}</span>
 
               <br />

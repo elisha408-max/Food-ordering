@@ -5,20 +5,24 @@ import cart from "../assets/cart.png";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import { Button } from "react-bootstrap";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { cart: cartValue } = useSelector((state) => state.product);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark header">
       <div className="container-fluid">
-        <Link to="/">
+        <Link to="/" disabled={cartValue?.length < 1 ? true : false}>
           <img
             src={Logo}
             alt="Image brand"
             className="img-fluid"
             style={{ height: "50px" }}
+            onClick={() => {
+              navigate("login");
+            }}
           />
         </Link>
         <button
@@ -59,8 +63,13 @@ const Header = () => {
                 <span className="visually-hidden">unread messages</span>
               </span>
             </div> */}
-
-            <Link to="cart">
+            <Button
+              disabled={cartValue?.length < 1 ? true : false}
+              className="iconButton"
+              onClick={() => {
+                navigate("/cart");
+              }}
+            >
               <div data-v-02906ae3="" className="image-wrapper">
                 <img
                   data-v-02906ae3=""
@@ -68,11 +77,12 @@ const Header = () => {
                   src={cart}
                   className="cart-img ms-3"
                 />
-                <span data-v-02906ae3="" className="cartsize" img-fluid>
+
+                <span data-v-02906ae3="" className="cartsize  img-fluid">
                   {cartValue.length}
                 </span>
               </div>
-            </Link>
+            </Button>
           </form>
         </div>
       </div>

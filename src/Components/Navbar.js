@@ -1,11 +1,25 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useFormik } from "formik";
+import { useDispatch, useSelector } from "react-redux";
+import {searchItems} from '../redux/actions/Search'
 const Navbar = (props) => {
   const inputEl = useRef("");
-  console.log(props);
-  const getSearchTerm = () => {
-    props.searchKeyword(inputEl.current.value)
-  };
+  const [searchField, setSearchField] = useState("");
+ const dispatch = useDispatch()
+  const formik = useFormik({
+    initialValues: {
+      search: "",
+      
+    },
+    onSubmit: (values, resetForm) => {
+      console.log(values, "values");
+      alert(JSON.stringify(values, null, 2));
+      
+      dispatch(searchItems(values))
+    },
+    
+  });
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light header">
@@ -42,7 +56,7 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="lunch"
+                  to="/lunch"
                   className="nav-link"
                   style={({ isActive }) =>
                     isActive
@@ -58,7 +72,7 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="snack"
+                  to="/snack"
                   className="nav-link "
                   style={({ isActive }) =>
                     isActive
@@ -74,7 +88,7 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="dinner"
+                  to="/dinner"
                   className="nav-link "
                   style={({ isActive }) =>
                     isActive
@@ -90,7 +104,7 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="burger"
+                  to="/burger"
                   className="nav-link "
                   style={({ isActive }) =>
                     isActive
@@ -105,16 +119,26 @@ const Navbar = (props) => {
                 </NavLink>
               </li>
             </ul>
-            <input
-              ref={inputEl}
-              type="text"
-              className="searchBox"
-              id="exampleInputFood"
-              placeholder="Search  for food..."
-              value={props.term}
-              onChange={getSearchTerm}
-              
-            />
+            <form  onSubmit={formik.handleSubmit}>
+              <input
+                ref={inputEl}
+                type="text"
+                className="searchBox me-2"
+                id="search"
+                placeholder="Search  for food..."
+                name='search'
+                onChange={formik.handleChange}
+                value={formik.values.search}
+                onBlur={formik.handleBlur}
+              />
+              <button
+                type="submit"
+                className="btn btn-success ms-3"
+               
+              >
+                Suc
+              </button>
+            </form>
           </div>
         </div>
       </nav>
