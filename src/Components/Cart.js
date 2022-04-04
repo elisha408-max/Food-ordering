@@ -13,6 +13,7 @@ const Cart = () => {
   let Totalamount = 0;
 
   const [quantity, setQuantity] = React.useState(0);
+  
   return (
     <>
       <div className="container">

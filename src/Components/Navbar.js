@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
-const Navbar = () => {
+const Navbar = (props) => {
+  const inputEl = useRef("");
+  console.log(props);
+  const getSearchTerm = () => {
+    props.searchKeyword(inputEl.current.value)
+  };
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light header">
@@ -100,6 +105,16 @@ const Navbar = () => {
                 </NavLink>
               </li>
             </ul>
+            <input
+              ref={inputEl}
+              type="text"
+              className="searchBox"
+              id="exampleInputFood"
+              placeholder="Search  for food..."
+              value={props.term}
+              onChange={getSearchTerm}
+              
+            />
           </div>
         </div>
       </nav>

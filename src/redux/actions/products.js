@@ -14,7 +14,7 @@ export const fetchProduct = () => async (dispatch) => {
     let response = await axios.get(
       "https://khanpin-api.herokuapp.com/data"
     );
-    console.log(response?.data,'response')
+   
     if (response?.data) {
 
       dispatch({

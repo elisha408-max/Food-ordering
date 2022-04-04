@@ -9,9 +9,9 @@ import { decrement } from "../../redux/actions/counter";
 import { increment } from "../../redux/actions/counter";
 import BreakfastItem from './BreakfastItem'
 
-const BreakfastList = () => {
+const BreakfastList = (props) => {
   const dispatch = useDispatch();
-  
+  console.log(props,'props')
   // const [data, setData] = useState([]);
   // useEffect(() => {
   //   const fetchData = async () => {

@@ -215,3 +215,8 @@ body {
 .login .header{
   display: none!important;
 }
+.searchBox{
+  padding: 9px 21px;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+}
