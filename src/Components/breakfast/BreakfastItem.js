@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/actions/cart";
-
 import { useNavigate } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 const BreakfastItem = ({ item }) => {

@@ -2,23 +2,23 @@ import React, { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import {searchItems} from '../redux/actions/Search'
+import { searchItems } from "../redux/actions/Search";
+import{useNavigate} from "react-router-dom";
 const Navbar = (props) => {
+  const navigate = useNavigate();
   const inputEl = useRef("");
   const [searchField, setSearchField] = useState("");
- const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       search: "",
-      
     },
     onSubmit: (values, resetForm) => {
       console.log(values, "values");
       alert(JSON.stringify(values, null, 2));
-      
-      dispatch(searchItems(values))
+       navigate('/search')
+      dispatch(searchItems(values));
     },
-    
   });
   return (
     <div>
@@ -119,14 +119,14 @@ const Navbar = (props) => {
                 </NavLink>
               </li> */}
             </ul>
-            <form  onSubmit={formik.handleSubmit}>
+            <form onSubmit={formik.handleSubmit}>
               <input
                 ref={inputEl}
                 type="text"
                 className="searchBox me-2"
                 id="search"
                 placeholder="Search  for food..."
-                name='search'
+                name="search"
                 onChange={formik.handleChange}
                 value={formik.values.search}
                 onBlur={formik.handleBlur}
@@ -134,7 +134,9 @@ const Navbar = (props) => {
               <button
                 type="submit"
                 className="btn btn-success ms-3"
-               
+             
+                  
+                
               >
                 Search
               </button>

@@ -5,3 +5,4 @@ export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const FILTER_ITEMS = "FILTER_ITEMS";
 export const SEARCH_ITEMS = "SEARCH_ITEMS";
+export const CLEAR_SEARCH = "CLEAR_SEARCH";

@@ -16,6 +16,7 @@ import Cart from "./Components/Cart.js";
 import Fooddetail from "./Components/Fooddetail.js";
 import LunchDetail from "./Components/LunchDetail.js";
 import LunchItem from "./Components/lunch/LunchItem.js";
+import {SearchItem }from "./Components/SearchItem.js";
 // import { addToCart } from "../../redux/actions/cart";
 import { useDispatch, useSelector } from "react-redux";
 function App() {
@@ -55,7 +56,7 @@ function App() {
         <Route path="/burger" element={<Beveragelist />} />
         <Route path="/cart" element={<Cart />} />
         <Route path={`/fooddetail/:fooddetailId`} element={<Fooddetail />} />
-        {/* <Route path={`/lunch/:lunchdetailId`} element={<LunchDetail />} /> */}
+        <Route path={"/search"} element={<SearchItem />} />
       </Routes>
     </div>
   );

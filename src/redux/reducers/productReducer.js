@@ -6,6 +6,7 @@ import {
   REMOVE_FROM_CART,
   FILTER_ITEMS,
   SEARCH_ITEMS,
+  CLEAR_SEARCH,
 } from "../constants";
 
 const initialState = {
@@ -19,6 +20,7 @@ const initialState = {
   isLoading: false,
   cart: [],
   counter: 0,
+  searchItem: [],
 };
 
 const productReducer = (state = initialState, action) => {
@@ -83,21 +85,7 @@ const productReducer = (state = initialState, action) => {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload.id),
       };
-    case FILTER_ITEMS:
-      const searchedItems = state.products.filter((item) => {
-        return (
-          parseInt(item.price.split("").slice(1).join("") * 120) >=
-            action.payload.Price &&
-          parseInt(item.price.split("").slice(1).join("") * 120) <=
-            action.payload.Price1 &&
-          item.category[1] === action.payload.Category
-        );
-      });
-      console.log(searchedItems, "searchedItems");
-      return {
-        ...state,
-        products: searchedItems,
-      };
+   
     case SEARCH_ITEMS:
       console.log(action.payload);
       const i = Object.values(action.payload);
@@ -109,8 +97,13 @@ const productReducer = (state = initialState, action) => {
        console.log(searchValues);
       return {
         ...state,
-        breakfasts: [searchValues]
+        searchItem: [searchValues]
       }
+      case CLEAR_SEARCH:
+        return {
+          ...state,
+          searchItem: [],
+        }
     default:
       return state;
   }
