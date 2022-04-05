@@ -15,6 +15,7 @@ const initialState = {
   snacks: [],
   dinners: [],
   beverages: [],
+  searchItems:[],
   isLoading: false,
   cart: [],
   counter: 0,
@@ -99,12 +100,17 @@ const productReducer = (state = initialState, action) => {
       };
     case SEARCH_ITEMS:
       console.log(action.payload);
-      // const items = Object.values(action.payload.title);
-      // const searchValues = state.product.breakfasts.find((item) => {
-      //   console.log(item.name);
-      //   console.log(action.payload.values);
-      //   return item.name === items[0];
-      // });
+      const i = Object.values(action.payload);
+      console.log(state.product);
+      const searchValues = (state.breakfasts.find((item) => item.name === i[0]) || state.lunchs.find((item) => item.name === i[0])
+      || state.snacks.find((item) => item.name === i[0])
+      || state.dinners.find((item) => item.name === i[0])
+      ) ;
+       console.log(searchValues);
+      return {
+        ...state,
+        breakfasts: [searchValues]
+      }
     default:
       return state;
   }

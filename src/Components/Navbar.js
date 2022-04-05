@@ -102,7 +102,7 @@ const Navbar = (props) => {
                   Dinner
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink
                   to="/burger"
                   className="nav-link "
@@ -117,7 +117,7 @@ const Navbar = (props) => {
                 >
                   Burgers and Beverages
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
             <form  onSubmit={formik.handleSubmit}>
               <input
@@ -136,7 +136,7 @@ const Navbar = (props) => {
                 className="btn btn-success ms-3"
                
               >
-                Suc
+                Search
               </button>
             </form>
           </div>
