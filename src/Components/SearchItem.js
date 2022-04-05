@@ -1,33 +1,33 @@
-import React  from "react";
+import React from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
 
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/actions/cart";
 import { useNavigate } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 export const SearchItem = () => {
-    const [quantity, setQuantity] = React.useState(0);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const ratingChanged = (rating) => {
-        alert(`You have given ${rating} star for us.`);
-      };
+  const [quantity, setQuantity] = React.useState(0);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const ratingChanged = (rating) => {
+    alert(`You have given ${rating} star for us.`);
+  };
   const searchedItem = useSelector((state) => state.product.searchItem);
-  console.log(searchedItem,'searchedItem')
+  console.log(searchedItem, "searchedItem");
   return (
     <div>
       <Header />
       <Navbar />
-      <div className="col-6 mb-2">
-        <div className="card px-3 py-4">
-          <div className="row">
-            {searchedItem.map((item) => {
-              return (
-                <>
-                  {" "}
-                  <div className="col-6 mb-2">
-                    <div className="card px-3 py-4">
+      <div className="m-5">
+        <div className="col-6 mb-2">
+          <div className="card px-3 py-4">
+            <div className="row">
+              {searchedItem.map((item) => {
+                return (
+                  <>
+                    {" "}
+                    <div className="col-6 mb-2">
                       <div className="row">
                         <div className="col-7">
                           <h5
@@ -105,10 +105,10 @@ export const SearchItem = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </>
-              );
-            })}
+                  </>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

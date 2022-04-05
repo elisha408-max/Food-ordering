@@ -55,7 +55,7 @@ const Login = () => {
                   </div>
                   <div className="col-md-6 second pl-4 pr-4">
                     <h4 className="welcome text-danger">
-                      Welcome to <img src={logo} className="img-fluid" />
+                      Welcome to <img src={logo} className="img-fluid" alt='Hotel image'/>
                     </h4>
                     <div className="form-group">
                       {" "}
