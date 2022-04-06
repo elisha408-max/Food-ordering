@@ -92,7 +92,7 @@ const productReducer = (state = initialState, action) => {
       console.log(state.dinners,'dinners');
       const searchValues = (state.breakfasts.find((item) => item.name.toLowerCase() === i[0].toLowerCase()) || state.lunchs.find((item) => item.name.toLowerCase() === i[0].toLowerCase())
       || state.snacks.find((item) => item.name.toLowerCase() === i[0].toLowerCase())
-      || state.dinners.find((item) => item.name.toLowerCase() === i[0].toLowerCase())
+      || state.dinners.find((item) => item.name.toLowerCase().trim().split('').join('') === i[0].toLowerCase())
       ) ;
        console.log(searchValues);
        if(searchValues){
