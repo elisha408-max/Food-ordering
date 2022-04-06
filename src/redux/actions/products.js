@@ -12,7 +12,7 @@ export const fetchProduct = () => async (dispatch) => {
 
   try {
     let response = await axios.get(
-      "https://khanpin-api.herokuapp.com/data"
+      "https://ghumgham-demo.herokuapp.com/dishes?fbclid=IwAR10RIIrWs1sHv0B9nxVlvVYBXnb9UpWh3RzRdsXvwHe7Ib821zdgD9h6Is"
     );
    
     if (response?.data) {

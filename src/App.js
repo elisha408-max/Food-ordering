@@ -16,8 +16,10 @@ import Cart from "./Components/Cart.js";
 import Fooddetail from "./Components/Fooddetail.js";
 import LunchDetail from "./Components/LunchDetail.js";
 import LunchItem from "./Components/lunch/LunchItem.js";
-import {SearchItem }from "./Components/SearchItem.js";
-// import { addToCart } from "../../redux/actions/cart";
+import DinnerList from "./Components/Dinner/DinnerList.js";
+import { SearchItem } from "./Components/SearchItem.js";
+import Error from "./Components/Error";
+
 import { useDispatch, useSelector } from "react-redux";
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -52,11 +54,12 @@ function App() {
           <Route path={`:lunchdetailId`} element={<LunchDetail />} />
         </Route>
         <Route path="/snack" element={<Snackslist />} />
-        <Route path="/dinner" element={<Dinner />} />
+        <Route path="/dinner" element={<DinnerList />} />
         <Route path="/burger" element={<Beveragelist />} />
         <Route path="/cart" element={<Cart />} />
         <Route path={`/fooddetail/:fooddetailId`} element={<Fooddetail />} />
         <Route path={"/search"} element={<SearchItem />} />
+        <Route path={"*"} element={<Error />} />
       </Routes>
     </div>
   );

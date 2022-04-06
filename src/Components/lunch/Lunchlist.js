@@ -4,9 +4,6 @@ import axios from "axios";
 import { addToCart } from "../../redux/actions/cart";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../../redux/actions/products";
-
-import { decrement } from "../../redux/actions/counter";
-import { increment } from "../../redux/actions/counter";
 import LunchItem from "./LunchItem";
 import { Outlet } from "react-router-dom";
 import Header from '../Header';

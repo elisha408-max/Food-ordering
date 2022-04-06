@@ -89,16 +89,19 @@ const productReducer = (state = initialState, action) => {
     case SEARCH_ITEMS:
       console.log(action.payload);
       const i = Object.values(action.payload);
-      console.log(state.product);
-      const searchValues = (state.breakfasts.find((item) => item.name === i[0]) || state.lunchs.find((item) => item.name === i[0])
-      || state.snacks.find((item) => item.name === i[0])
-      || state.dinners.find((item) => item.name === i[0])
+      console.log(state.dinners,'dinners');
+      const searchValues = (state.breakfasts.find((item) => item.name.toLowerCase() === i[0].toLowerCase()) || state.lunchs.find((item) => item.name.toLowerCase() === i[0].toLowerCase())
+      || state.snacks.find((item) => item.name.toLowerCase() === i[0].toLowerCase())
+      || state.dinners.find((item) => item.name.toLowerCase() === i[0].toLowerCase())
       ) ;
        console.log(searchValues);
-      return {
-        ...state,
-        searchItem: [searchValues]
-      }
+       if(searchValues){
+        return {
+          ...state,
+          searchItem: [searchValues]
+        }
+       }
+      
       case CLEAR_SEARCH:
         return {
           ...state,
