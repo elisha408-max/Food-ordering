@@ -71,10 +71,11 @@ const Cart = () => {
                   return (
                     <div className="row mb-5 mt-3">
                       <div className="col-6">
+                        
                         <img
-                          src={Logo2}
-                          className="img-fluid"
-                          alt="food image"
+                          src={item.icon}
+                          alt="image"
+                          className="img-fluid imageWidth"
                         />
                       </div>
 

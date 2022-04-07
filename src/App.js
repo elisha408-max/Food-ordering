@@ -19,7 +19,7 @@ import LunchItem from "./Components/lunch/LunchItem.js";
 import DinnerList from "./Components/Dinner/DinnerList.js";
 import { SearchItem } from "./Components/SearchItem.js";
 import Error from "./Components/Error";
-
+import Signup from './Components/Signup'
 import { useDispatch, useSelector } from "react-redux";
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -59,6 +59,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path={`/fooddetail/:fooddetailId`} element={<Fooddetail />} />
         <Route path={"/search"} element={<SearchItem />} />
+        <Route path={"signup"} element={<Signup />} />
         <Route path={"*"} element={<Error />} />
       </Routes>
     </div>

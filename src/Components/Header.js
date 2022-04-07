@@ -53,6 +53,9 @@ const Header = () => {
             <button
               type="button"
               className="btn btn-light rounded-pill ms-3 signUp"
+              onClick={() => {
+                navigate("signup");
+              }}
             >
               Sign Up
             </button>
